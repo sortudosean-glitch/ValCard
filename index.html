@@ -129,16 +129,9 @@
         100% { transform: translateY(-100vh); opacity: 0; }
     }
 
-    /* Extra polish for very small phones */
     @media (max-width: 360px) {
-        h1 {
-            font-size: 1.4rem;
-        }
-
-        p {
-            font-size: 1rem;
-        }
-
+        h1 { font-size: 1.4rem; }
+        p { font-size: 1rem; }
         button {
             font-size: 0.95rem;
             padding: 10px 22px;
@@ -154,11 +147,12 @@
 </audio>
 
 <div class="card">
-    <h1>💖 Hi MY BABYY 💖</h1>
+    <h1>💖 Hi my love 💖</h1>
     <p>
-        Magandang ko babeh<br>
-        would you like to go out with me<br>
-        and be my Valentine?
+        I just wanted to ask you something<br>
+        from the heart…<br><br>
+        Would you like to go out with me<br>
+        and be my Valentine? 🌹
     </p>
 
     <div class="buttons">
@@ -168,28 +162,20 @@
 
     <div class="message" id="message">
         Thank you for saying yes 🌷<br>
-        I’d really love to spend time with you.
+        I really appreciate you,<br>
+        and I’m excited already ❤️
     </div>
 
     <div class="date-options" id="dateOptions">
-        <span>☕ Coffee</span>
+        <span>☕ Coffee date</span>
         <span>🍽️ Dinner</span>
-        <span>🌸 Walk & talk</span>
+        <span>🎥 Movie night</span>
+        <span>🌸 Just us talking</span>
     </div>
 </div>
 
 <script>
     let yesScale = 1;
-
-    function saveAnswer(answer) {
-        const text = `Valentine Response\n\nShe answered: ${answer}\nDate: ${new Date().toLocaleString()}`;
-        const blob = new Blob([text], { type: "text/plain" });
-        const link = document.createElement("a");
-        link.href = URL.createObjectURL(blob);
-        link.download = "answer.txt";
-        link.click();
-        URL.revokeObjectURL(link.href);
-    }
 
     function escapeNo() {
         const noBtn = document.getElementById("noBtn");
@@ -216,7 +202,6 @@
 
         document.getElementById("music").play();
         createHearts();
-        saveAnswer("YES 💕");
     }
 
     function createHearts() {
